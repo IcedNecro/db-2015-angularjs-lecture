@@ -1,0 +1,14 @@
+{
+  "name": "bd-project",
+  "authors": [
+    "Roman Statkevych <romanstatkevich@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "angular": "~1.4.7"
+  }
+}
