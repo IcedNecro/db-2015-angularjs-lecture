@@ -2,22 +2,47 @@
 <html ng-app='app'>
 <head >
 	<script type="text/javascript" src='../bower_components/angular/angular.js'></script>
-	<script type="text/javascript" src='../bower_components/foundation/foundation.js'></script>
-
+	<script type="text/javascript" src='../bower_components/jquery/dist/jquery.min.js'></script>
+	<script type="text/javascript" src='../bower_components/foundation/js/foundation.js'></script>
+	<link rel="stylesheet" type="text/css" href="../bower_components/foundation/css/foundation.min.css">
+	
 	<script type="text/javascript" src='../static/js/controller.js'></script>
+	<link rel="stylesheet" type="text/css" href="../static/css/main.css">
 	<title>Profile</title>
 </head>
-<body ng-controller='profile_controller'>
-	<ul>
-		<li>{{userData["username"]}}</li>
-		<li>{{userData["firstName"]}}</li>
-		<li>{{userData["lastName"]}}</li>
-		<li>{{userData["birth_day"]}}</li>
-	</ul>
+<body >
+	<div class="header">
+		<div class="header-container medium-offset-1 large-offset-1 medium-10 large-10 columns">
+			<div class="medium-8 large-8 columns">
+				<img class="header-pic" src="../static/img/header-pic.png">
+			</div>
+			<div class="medium-3 large-3 columns header-search">
+				<input ng-model='search_text' type="text">
+				<div ng-controller='search_controller' class="header-search-result">
+					{{search_text}}
+					<div ng-repeat='student in studentsList | filter:search_text:student.total_name'>
+						<p class="search-student-name">{{student.total_name}}</p>
+						<p class="search-student-data">{{student.faculty+', '+student.course+' course'}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container row">
+		<div class="medium-offset-1 large-offset-1 medium-10 large-10 columns" 
+			 ng-controller='profile_controller'>
+			<ul>
+				<li>{{userData["username"]}}</li>
+				<li>{{userData["firstName"]}}</li>
+				<li>{{userData["lastName"]}}</li>
+				<li>{{userData["birth_day"]}}</li>
+			</ul>
 
-	<p>Skills list</p>
-	<ul>
-		<li ng-repeat="skill in skills">{{skill}}</li>
-	</ul>
+			<p>Skills list</p>
+			<ul>
+				<li ng-repeat="skill in skills">{{skill}}</li>
+			</ul>
+		</div>
+	</div>
 </body>
 </html>>

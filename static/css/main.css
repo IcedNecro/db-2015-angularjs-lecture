@@ -1,0 +1,64 @@
+body {
+	background-color: #EEEEEE;
+
+}
+
+.header {
+	height: 70px;
+	width: 100%;
+	background-color: white;
+	box-shadow: 0 0 5px black;
+	z-index: 100;
+	position: relative;
+
+}
+
+.header-search {
+	margin: 15px;
+	padding: 0px;
+}
+
+.header-search input {
+	text-align: right;
+	margin: 0px;
+}
+.header-search:before{ 
+	content: url(../img/icons/search.svg);
+	/*background-color: red;*/
+	padding: 10px;
+
+	position: absolute;
+}
+
+.header-search-result {
+	position: absolute;
+	z-index: 120;
+	width: 100%;
+	background-color: white;
+	box-shadow: 0 5px 5px black;
+}
+
+.header-search-result p {
+	margin: 0;
+	padding-left: 10px;
+}
+
+.header-pic {
+	height: 50px;
+	margin: 10px;
+}
+
+.search-student-name {
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.search-student-data {
+	font-size: 9px;
+	font-style: italic;
+}
+.container {
+	position: relative;
+	background-color: white;
+	z-index: 50;
+}
