@@ -2,10 +2,22 @@
 <html ng-app='app'>
 <head >
 	<script type="text/javascript" src='../bower_components/angular/angular.js'></script>
+	<script type="text/javascript" src='../bower_components/foundation/foundation.js'></script>
+
 	<script type="text/javascript" src='../static/js/controller.js'></script>
 	<title>Profile</title>
 </head>
 <body ng-controller='profile_controller'>
-	<p>{{ helloMessage }}</p>
+	<ul>
+		<li>{{userData["username"]}}</li>
+		<li>{{userData["firstName"]}}</li>
+		<li>{{userData["lastName"]}}</li>
+		<li>{{userData["birth_day"]}}</li>
+	</ul>
+
+	<p>Skills list</p>
+	<ul>
+		<li ng-repeat="skill in skills">{{skill}}</li>
+	</ul>
 </body>
 </html>>
