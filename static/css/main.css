@@ -43,6 +43,17 @@ body {
 	padding-left: 10px;
 }
 
+.header-search-student-list-item {
+	height: 50px;
+	border-bottom: 1px solid #eeeeee;
+	padding: 7px;
+}
+
+.header-search-student-list-item:hover {
+	background-color: #02F;
+	color: white;
+}
+
 .header-pic {
 	height: 50px;
 	margin: 10px;

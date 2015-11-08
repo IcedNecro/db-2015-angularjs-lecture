@@ -16,11 +16,12 @@
 			<div class="medium-8 large-8 columns">
 				<img class="header-pic" src="../static/img/header-pic.png">
 			</div>
-			<div class="medium-3 large-3 columns header-search">
-				<input ng-model='search_text' type="text">
-				<div ng-controller='search_controller' class="header-search-result">
+			<div ng-controller='search_controller' class="medium-3 large-3 columns header-search">
+				<input ng-model='search_text' ng-keyup='getByFilter(search_text)' type="text">
+				<div  class="header-search-result">
 					{{search_text}}
-					<div ng-repeat='student in studentsList | filter:search_text:student.total_name'>
+					<div class="header-search-student-list-item" ng-if='data.length==0'><p>No data</p></div>
+					<div class="header-search-student-list-item" ng-if='data.length!=0' ng-repeat='student in data'>
 						<p class="search-student-name">{{student.total_name}}</p>
 						<p class="search-student-data">{{student.faculty+', '+student.course+' course'}}</p>
 					</div>
