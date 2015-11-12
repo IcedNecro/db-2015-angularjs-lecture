@@ -1,5 +1,12 @@
 <div class="medium-offset-2 large-offset-2 medium-8 large-8 feed">
-	<div class="vacancy-search">
+	<div class="row medium-offset-2 large-offset-2 medium-8 large-8">
+		<div class="medium-6 columns">
+		
+			<button ng-if='page!=0'  ng-click='prev()'><</button>
+		</div>
+		<div class="medium-6 columns">
+			<button ng-if='vacancies.length==5' ng-click='next()'>></button>
+		</div>
 	</div>
 	<div class='feed-item' ng-repeat='vacancy in vacancies'>
 		<div class='row'>
