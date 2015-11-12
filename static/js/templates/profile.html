@@ -1,0 +1,15 @@
+<div class="container row">
+	<div class="medium-offset-1 large-offset-1 medium-10 large-10 columns">
+		<ul>
+			<li class="profile-name">{{userData["firstName"]}}</li>
+			<li class="profile-surname">{{userData["lastName"]}}</li>
+			<li class='profile-username'>{{userData["username"]}}</li>
+			<li>{{userData["birth_day"]}}</li>
+		</ul>
+
+		<p>Skills list</p>
+		<ul>
+			<li ng-repeat="skill in skills">{{skill}}</li>
+		</ul>
+	</div>
+</div>

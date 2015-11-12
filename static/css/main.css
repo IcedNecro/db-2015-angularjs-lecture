@@ -1,3 +1,22 @@
+.home-tip,
+.home-header {
+	width: 100%;
+	color: white;
+	text-align: center;
+	text-shadow: 1px 1px 1px black;
+	padding: 40px;
+	padding-top: 100px; 
+}
+.total-banner {
+	z-index: 50;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+
+	background-image: url(/static/img/background.jpg);
+	background-position: 50% 50%;
+}
+
 body {
 	background-color: #EEEEEE;
 
@@ -11,6 +30,12 @@ body {
 	z-index: 100;
 	position: relative;
 
+}
+
+.header-name {
+	font-size: 12px;
+	color: #bbbbbb;
+	padding-top: 25px;
 }
 
 .header-search {
@@ -52,6 +77,12 @@ body {
 .header-search-student-list-item:hover {
 	background-color: #02F;
 	color: white;
+}
+
+.profile-name, .profile-surname {
+	font-size: 20px;
+	font-weight: bold;
+	list-style: none;
 }
 
 .header-pic {

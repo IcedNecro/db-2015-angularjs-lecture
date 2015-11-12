@@ -2,22 +2,38 @@
 <html ng-app='app'>
 <head >
 	<script type="text/javascript" src='../bower_components/angular/angular.js'></script>
-	<script type="text/javascript" src='../bower_components/jquery/dist/jquery.min.js'></script>
-	<script type="text/javascript" src='../bower_components/foundation/js/foundation.js'></script>
-	<link rel="stylesheet" type="text/css" href="../bower_components/foundation/css/foundation.min.css">
+	<script type="text/javascript" src='/bower_components/jquery/dist/jquery.min.js'></script>
+	<script type="text/javascript" src='/bower_components/foundation/js/foundation.js'></script>
+	<script type="text/javascript" src='/bower_components/angular-route/angular-route.js'></script>
 	
-	<script type="text/javascript" src='../static/js/controller.js'></script>
-	<link rel="stylesheet" type="text/css" href="../static/css/main.css">
+	<script type="text/javascript" src='/static/js/pages/main.js'></script>
+	<link rel="stylesheet" type="text/css" href="/bower_components/foundation/css/foundation.min.css">
+
+	<script type="text/javascript" src='/static/js/main.js'></script>
+	<script type="text/javascript" src='/static/js/controllers/profile-controller.js'></script>
+	<script type="text/javascript" src='/static/js/controllers/header-controller.js'></script>
+	<script type="text/javascript" src='/static/js/services/user-profile-service.js'></script>
+	<script type="text/javascript" src='/static/js/controllers/auth-controller.js'></script>
+	<script type="text/javascript" src='/static/js/controllers/vacancy-controller.js'></script>
+
+
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/static/js/styles/login.css">
+	<link rel="stylesheet" type="text/css" href="/static/js/styles/feed.css">
+
 	<title>Profile</title>
 </head>
 <body >
 	<div class="header">
 		<div class="header-container medium-offset-1 large-offset-1 medium-10 large-10 columns">
-			<div class="medium-8 large-8 columns">
+			<div class="medium-2 large-2 columns">
 				<img class="header-pic" src="../static/img/header-pic.png">
 			</div>
+			<div ng-controller='header_controller' class="medium-2 columns">
+				<p class="header-name">{{user.name+' '+user.surname}}</p>
+			</div>
 			<div ng-controller='search_controller' class="medium-3 large-3 columns header-search">
-				<input ng-model='search_text' ng-keyup='getByFilter(search_text)' type="text">
+				<input ng-model='search_text' ng-keyup='getByFilter(search_text)' class='header-search-string' type="text">
 				<div  class="header-search-result">
 					{{search_text}}
 					<div class="header-search-student-list-item" ng-if='data.length==0'><p>No data</p></div>
@@ -29,21 +45,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container row">
-		<div class="medium-offset-1 large-offset-1 medium-10 large-10 columns" 
-			 ng-controller='profile_controller'>
-			<ul>
-				<li>{{userData["username"]}}</li>
-				<li>{{userData["firstName"]}}</li>
-				<li>{{userData["lastName"]}}</li>
-				<li>{{userData["birth_day"]}}</li>
-			</ul>
-
-			<p>Skills list</p>
-			<ul>
-				<li ng-repeat="skill in skills">{{skill}}</li>
-			</ul>
-		</div>
-	</div>
+	<div ng-view></div>
+	
 </body>
 </html>>

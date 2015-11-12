@@ -1,0 +1,21 @@
+<div class="medium-offset-2 large-offset-2 medium-8 large-8 feed">
+	<div class="vacancy-search">
+	</div>
+	<div class='feed-item' ng-repeat='vacancy in vacancies'>
+		<div class='row'>
+			<img src="/static/img/lux.png" class="medium-2 columns">
+			<div class="medium-10 columns"> 
+				<div class="row">
+					<div class="medium-10 columns">
+						<p class="vacancy-header">{{vacancy.header}}</p>
+						<p class="vacancy-company">{{vacancy.company}}</p>
+					</div>
+					<div class="medium-2 columns">
+						<p class="vacancy-salary">{{vacancy.salary+''+vacancy.currency}}</p>
+					</div>
+				</div>
+				<p class="vacancy-description">{{vacancy.description}}</p>
+			</div>
+		</div>
+	</div>	
+</div>
